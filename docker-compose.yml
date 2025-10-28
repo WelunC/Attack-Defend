@@ -1,0 +1,15 @@
+﻿version: "3.8"
+services:
+  app:
+    build: .
+    container_name: dochost_app
+    volumes:
+      - ./data:/data
+    ports:
+      - "5000:5000"
+    networks:
+      - labnet
+
+networks:
+  labnet:
+    driver: bridge
